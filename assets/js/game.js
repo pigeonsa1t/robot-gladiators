@@ -6,25 +6,26 @@ var enemyName = "Roborto";
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-//Create a function:
 
-var fight = function() {
-    
-    //Alert players that they are starting the round:
-    
-    window.alert("Welcome to Robot Gladiators!");
-     
-    //Subtract the value of `playerAttack` from the value of `enemyHealth` and use that result to update the value in the `enemyHealth` variable
+    //1.Alert players that they are starting the round:
 
-    //Log a resulting message to the console so we know that it worked.
+    //2.Subtract the value of `playerAttack` from the value of `enemyHealth` and use that result to update the value in the `enemyHealth` variable
 
-    //Subtract the value of `enemyAttack` from the value of `playerHealth` and use that result to update the value in the `playerHealth` variable.
+    //3.Log a resulting message to the console so we know that it worked.
 
-    //Log a resulting message to the console so we know that it worked.
-};
+    //4.Subtract the value of `enemyAttack` from the value of `playerHealth` and use that result to update the value in the `playerHealth` variable.
 
-//Execute a function:
+    //5.Log a resulting message to the console so we know that it worked.
+
 fight();
+
+//Alert players that they are starting the round
+var fight = function() {   
+    window.alert("Welcome to Robot Gladiators!");
+
+    var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose."); 
+        console.log(promptFight);
+};
 
 //Subtract the value of `playerAttack` from the value of `enemyHealth` and use that result to update the value in the `enemyHealth` variable
 enemyHealth = enemyHealth - playerAttack;
@@ -52,7 +53,7 @@ console.log(
     enemyName + " attacked " + playerName + " playerName " + " now has " + playerHealth + " health remaining "
 );
 
-// check player's health
+//Check player's health
 if (playerHealth <= 0) {
     window.alert(playerName + " has died!");
 } 
@@ -75,3 +76,4 @@ if (playerHealth === 0) {
 else {
     console.log("This will run instead");
 }
+
