@@ -21,16 +21,16 @@ console.log(enemyNames[0]);
 console.log(enemyNames[3]);
 
 var fight = function(enemyName) {
-    while(playerHealth > 0 && enemyHealth > 0) { 
+    while (playerHealth > 0 && enemyHealth > 0) { 
         // Ask if the player wants to fight or run:
         var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");  
         
-        // If player chooses to skip confirm and then stop the loop:
+        // If player chooses to skip, confirm and then stop the loop:
         if (promptFight === "skip" || promptFight === "SKIP") {
             // Confirm player wants to skip:
             var confirmSkip = window.confirm("Are you sure you'd like to quit?");
         
-        //If yes (true), leave fight
+            //If yes (true), leave fight
             if (confirmSkip) {
                 window.alert(playerName + " has decided to skip this fight. Goodbye!");
                 //Subtract money from playerMoney for skipping
@@ -39,10 +39,11 @@ var fight = function(enemyName) {
                 break;
             }
         }
+
         // Remove enemy's health by subtracting the amount set in the playerAttack variable:
         enemyHealth = enemyHealth - playerAttack;
         console.log(
-            playerName + " attacked " + enemyNames[i] + ". " + enemyNames[i] + " now has " + enemyHealth + " health remaining."
+            playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
         );
         
         // Check enemy's health:
@@ -51,47 +52,45 @@ var fight = function(enemyName) {
 
             // Award the player for winnning:
             playerMoney = playerMoney + 20;
-
-            // Leave while() loop since enemy is dead:
+            // Leave while() loop if the enemy is dead:
             break;
+
         } else {
-            window.alert(enemyNames[i] + " still has " + enemyHealth + " health left.");
+            window.alert(enemyName + " still has " + enemyHealth + " health left.");
         } 
 
         // Remove player's health by subtracting the amount set in the enemyAttack variable:
         playerHealth = playerHealth - enemyAttack;
         console.log (
-            enemyNames[i] + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
+            enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
         );
 
         // Check player's health :
         if (playerHealth <= 0) {
             window.alert(playerName + " has died!");
-            // Leave while() loop if player is dead:
+            // Leave while() loop if the player is dead:
             break;
+
         } else {
             window.alert(playerName + ' still has ' + playerHealth + ' health left.');
         }
-    }
-};
+    } // End of "while()" loop
+}; // End of "fight()" function
 
 // Fight each enemy-robot by looping over them and fighting them one at a time.
 for (var i = 0; i < enemyNames.length; i++) {
+    // Pick new enemy to fight based on the index of the enemyNames array:
+    var pickedEnemyName = enemyNames[i];
+    // Reset enemyHealth before starting new fight:
+    enemyHealth = 50;
+    // Call fight function with enemy-robot:
+    fight(pickedEnemyName);
+    
     // If player is still alive, keep fighting.
     if (playerHealth > 0) {
         window.alert('Welcome to Robot Gladiators!');
-        // Pick new enemy to fight based on the index of the enemyNames array:
-        var pickedEnemyName = enemyNames[i];
-        // Reset enemyHealth before starting new fight:
-        enemyHealth = 50;
-        // Use debugger to pause script from running to check the code
-        // debugger;
-
-        // Pass the pickedEnemyName variable's value into the fight function:
-        fight(pickedEnemyName);
-    }
     // If player is dead, stop the game:
-    else {
+    } else {
         window.alert("You have lost your robot in battle! Game Over!")
         break;
     }
