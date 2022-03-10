@@ -1,47 +1,45 @@
 //Fight Function:
-var fight = function(enemyName) {
-
-    //Alert players that they are starting the round:
-    window.alert("Welcome to Robot Gladiators!");
-}
+//var fight = function(fight) {
+//    fight(enemyNames[i])
+//}
 
 //This window prompt opens the game:
 var playerName = window.prompt("What is your robot's name?");
 
 //Declare the important variables/characters first:
 var playerHealth = 100;
-var playerAttack = 50;
+var playerAttack = 10;
 var playerMoney = 10;
 
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-//**//Declare each enemy-robot's name:
+//**// Declare each enemy-robot's name:
         //var enemy1 = "Roborto";
         //var enemy2 = "Amy Android";
         //var enemy3 = "Robo Trumble";
         //etc...
 
-//Or create an array:
+//**// Or create an array:
 var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
  
-//Type the above once with each name...
+//**// Type the above once with each name...
 
-//And then you can prove it works with console logs:
-    console.log(enemyNames);
-    console.log(enemyNames[0]);
-    console.log(enemyNames[1]);
-    console.log(enemyNames[2]);
+//**// And then you can prove it works with console logs:
+//    console.log(enemyNames);
+//    console.log(enemyNames[0]);
+//    console.log(enemyNames[1]);
+//    console.log(enemyNames[2]);
 
-//  Note that enemyName here is the arbitrarily named parameter 
-//  that is used by the function, and is not a reference to the 
-//  previous enemyName variable used earlier in our code.
+//**// Note that enemyName here is the arbitrarily named parameter 
+//      that is used by the function, and is not a reference to the 
+//      previous enemyName variable used earlier in our code.
 
-for (var i = 0; i < enemyNames.length; i++) {
+for(var i = 0; i < enemyNames.length; i++) {
     console.log(enemyNames[i]);
-    console.log(i);
-    console.log(enemyNames[i] + " is at " + i + " index");
 }
+//Alert players that they are starting the round:
+window.alert("Welcome to Robot Gladiators!");
 
 //Ask if the player wants to fight or run:
 var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose."); {
@@ -74,7 +72,7 @@ var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? En
             window.alert(playerName + " still has " + playerHealth + "health left.");
         }
 
-    //If player chooses to skip
+//      If player chooses to skip
     } else if (promptFight === "skip" || promptFight === "SKIP") {
         var confirmSkip = window.confirm("Are you sure you'd like to quit?");
     
@@ -91,8 +89,11 @@ var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? En
         window.alert("You need to choose a valid option. Try again!");
     }
 };
-// run fight function to start game
-fight(enemyRobot);
+
+// Run fight function to start game:
+for(var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+}
 
 //      for ([initial expression]; [condition]; [increment expression]) 
 //      statement
