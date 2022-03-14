@@ -85,5 +85,10 @@ var fight = function() {
   }
 };
 
+// for loop example:
+//      **for([initial expression]; [condition]; [increment expression]) {
+//          statement
+//      }
+
 // run fight function to start game
 //fight();
