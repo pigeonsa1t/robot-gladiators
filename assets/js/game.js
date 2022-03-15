@@ -8,69 +8,46 @@ var playerMoney = 10;
 // console.log(playerName, playerAttack, playerHealth);
 
 // array:
-var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
-//                   [0]          [1]            [2]
-//                        array index numbers ^                 
+var enemyNames[i] = ["Roborto", "Amy Android", "Robo Trumble"];          
 var enemyHealth = 50;
 var enemyAttack = 12;
-
-// fight function       ***arbitrary label
-var fight = function(enemyName) {
-  // Alert players that they are starting the round
-  window.alert("Welcome to Robot Gladiators!");
-
-  // ask player if they'd like to fight or run
+ 
+// ***FIGHT FUNCTION START** 
+var fight = function(enemyName) { //***arbitrary label
+//    * window.alert("Welcome to Robot Gladiators!")
   var promptFight = window.prompt('Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
   // if player choses to fight, fight
   if (promptFight === "fight" || promptFight === "FIGHT") {
-    // remove enemy's health by subtracting the amount set in the playerAttack variable
     enemyHealth = enemyHealth - playerAttack;
-    console.log(
-      playerName + " attacked " + enemyNames + ". " + enemyNames + " now has " + enemyHealth + " health remaining."
-    );
-
-    // check enemy's health
-    if (enemyHealth <= 0) {
-      window.alert(enemyNames + " has died!");
-    } else {
-      window.alert(enemyNames + " still has " + enemyHealth + " health left.");
-    }
-
-    // remove players's health by subtracting the amount set in the enemyAttack variable
-    playerHealth = playerHealth - enemyAttack;
-    console.log(
-      enemyNames + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
-    );
-
-    // check player's health
-    if (playerHealth <= 0) {
-      window.alert(playerName + " has died!");
-    } else {
-      window.alert(playerName + " still has " + playerHealth + " health left.");
-    }
-    // if player choses to skip
-  } else if (promptFight === "skip" || promptFight === "SKIP") {
-    // confirm player wants to skip
+      console.log(playerName + " attacked " + enemyNames[i] + ". " + enemyNames[i] + " now has " + enemyHealth + " health remaining.");    
+  // check enemy's health
+  if (enemyHealth <= 0) {
+    window.alert(enemyNames[i] + " has died!");
+  } else {
+    window.alert(enemyNames[i] + " still has " + enemyHealth + " health left.");
+  // remove players's health by subtracting the amount set in the enemyAttack variable
+  playerHealth = playerHealth - enemyAttack;
+    console.log(enemyNames[i] + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining.");
+  }// check player's health
+  if (playerHealth <= 0) {
+    window.alert(playerName + " has died!");
+  } else {
+    window.alert(playerName + " still has " + playerHealth + " health left.");
+  }} else if (promptFight === "skip" || promptFight === "SKIP") {
     var confirmSkip = window.confirm("Are you sure you'd like to quit?");
-
-    // if yes (true), leave fight
+    // ask player if they want to quit:
     if (confirmSkip) {
       window.alert(playerName + " has decided to skip this fight. Goodbye!");
-      // subtract money from playerMoney for skipping
-      playerMoney = playerMoney - 2;
-    }
-    // if no (false), ask question again by running fight() again
-    else {
+        playerMoney = playerMoney - 2;
+    } else {
       fight();
-    }
-    // if player did not chose 1 or 2 in prompt
-  } else {
+    }} else {
     window.alert("You need to pick a valid option. Try again!");
-  }
-};
+}};
+// ***FIGHT FUNCTION END*
 
-for (var i = 0; i < enemyNames.length; i++) {
-  fight(enemyNames[i]);
+for (var i = 0; i < enemyNames[i].length; i++) {
+  fight(enemyNames[i][i]);
 }
 
 
@@ -81,6 +58,6 @@ for (var i = 0; i < enemyNames.length; i++) {
 // run fight function to start game:
 //    * fight();
 
-//   console.log(enemyNames[i]);
+//   console.log(enemyNames[i][i]);
 //   console.log(i);
-//   console.log(enemyNames[i] + " is at " + i + " index");
+//   console.log(enemyNames[i][i] + " is at " + i + " index");
