@@ -1,7 +1,6 @@
-
 =======================================================================
 
-When a for loop executes, the following sequence occurs:
+!!! When a for loop executes, the following sequence occurs:
 
 1. The initial expression is the first statement executed, initializing 
 the loop iterator or counter. This expression can also declare variables.
@@ -9,6 +8,8 @@ the loop iterator or counter. This expression can also declare variables.
     ~ Here's an example of an initial expression:
 
         * var i = 0;
+
+_______________________________________________________________________
 
 2. The condition statement is then evaluated. If this condition 
 evaluates to true, the loop statement executes. If the condition's 
@@ -19,8 +20,12 @@ the condition is assumed to be true.
 
         * i < 3;
 
+_______________________________________________________________________
+
 3. Then the statement executes. To execute multiple statements, use 
 a block statement { }, as used in if-else statements.
+
+_______________________________________________________________________
 
 4. The increment expression executes, incrementing the iterator, which 
 is the variable i.
@@ -30,6 +35,7 @@ is the variable i.
         * i++
 
     ~ This is equivalent to i = i + 1.
+_______________________________________________________________________
 
 5. After the iterator increments, the condition is then reevaluated 
 and continues the loop chain.
@@ -48,9 +54,9 @@ and continues the loop chain.
 
 =======================================================================
 
-DEEP DIVE:
+!!!! DEEP DIVE:
 
-Parameters often get confused with arguments because their syntax is 
+~ Parameters often get confused with arguments because their syntax is 
 similar. The main distinction between them is their purpose in the 
 function. In the following function expression, a parameter serves as 
 a variable placeholder that indicates how the variable will be used in 
@@ -62,10 +68,36 @@ to the purpose of the variable, as you can see in the following code:
         console.log("I wash with " + soapType);
     };
 
-    ~ When we call the wash() function, we can enter a type of soap into the 
-    argument. The argument is used when a function is called with a value 
-    as an input.
+    ~ When we call the wash() function, we can enter a type of soap into 
+    the argument. The argument is used when a function is called with a 
+    value as an input.
 
         * wash("Irish Spring"); // => I wash with Irish Spring
 
     ~ This will be displayed in the console.
+
+========================================================================
+
+~ We removed the console.log statements for now to declutter the console 
+window. The fight() function expression should then come next. This 
+expression has to be above the for loop because we'll be calling the 
+fight() within the loop.
+
+~ If the function isn't declared before the function call, we'll get an 
+error like the one we received earlier—with some differences—as shown 
+in the following line of code:
+
+    * Uncaught TypeError: fight is not a function
+
+~ Now let's type the for loop into the game.js file, replacing the 
+fight() function call at the bottom of the game.js file, so that it 
+matches the following code:
+
+    * for(var i = 0; i < enemyNames.length; i++) {
+        fight(enemyNames[i]);
+    }
+!!!!! Notice that the fight() function call was replaced with a for loop that 
+calls the fight() function multiple times using the element in the 
+enemyNames[i] array as the argument.
+
+=======================================================================

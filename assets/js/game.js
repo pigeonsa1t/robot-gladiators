@@ -71,15 +71,17 @@ var fight = function(enemyName) {
 };
 
 for (var i = 0; i < enemyNames.length; i++) {
-  console.log(enemyNames[i]);
-  console.log(i);
-  console.log(enemyNames[i] + " is at " + i + " index");
+  fight(enemyNames[i]);
 }
 
 
 //  We can actually use the iterator in the for loop to map to an 
-//    array's index. This allows us to iterate through an array, 
-//    element by element, index by index.
+//   array's index. This allows us to iterate through an array, 
+//   element by element, index by index.
 
 // run fight function to start game:
-//    fight();
+//    * fight();
+
+//   console.log(enemyNames[i]);
+//   console.log(i);
+//   console.log(enemyNames[i] + " is at " + i + " index");
