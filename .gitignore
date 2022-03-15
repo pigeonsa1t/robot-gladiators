@@ -1,0 +1,71 @@
+
+=======================================================================
+
+When a for loop executes, the following sequence occurs:
+
+1. The initial expression is the first statement executed, initializing 
+the loop iterator or counter. This expression can also declare variables.
+    
+    ~ Here's an example of an initial expression:
+
+        * var i = 0;
+
+2. The condition statement is then evaluated. If this condition 
+evaluates to true, the loop statement executes. If the condition's 
+value is false, the for loop terminates. If this condition is omitted, 
+the condition is assumed to be true.
+
+    ~ Here's an example of a condition:
+
+        * i < 3;
+
+3. Then the statement executes. To execute multiple statements, use 
+a block statement { }, as used in if-else statements.
+
+4. The increment expression executes, incrementing the iterator, which 
+is the variable i.
+
+    ~ Here's an example of an IncrementExpression:
+
+        * i++
+
+    ~ This is equivalent to i = i + 1.
+
+5. After the iterator increments, the condition is then reevaluated 
+and continues the loop chain.
+
+    ~ To see the iterator in action, let's display it in each loop by 
+    adding an argument in the console.log function with a comma:
+
+        *for(var i = 0; i < 3; i++) {
+            console.log("apple", i);
+        }
+        
+    ~ Alternatively, we could concatenate the string and the variable as 
+    shown in the following line of code:
+
+        * console.log("apple " + i)
+
+=======================================================================
+
+DEEP DIVE:
+
+Parameters often get confused with arguments because their syntax is 
+similar. The main distinction between them is their purpose in the 
+function. In the following function expression, a parameter serves as 
+a variable placeholder that indicates how the variable will be used in 
+the function. Because the parameter is only used for the scope of the 
+function, its name isn't particularly important—but it typically relates 
+to the purpose of the variable, as you can see in the following code:
+
+    * var wash = function(soapType) {
+        console.log("I wash with " + soapType);
+    };
+
+    ~ When we call the wash() function, we can enter a type of soap into the 
+    argument. The argument is used when a function is called with a value 
+    as an input.
+
+        * wash("Irish Spring"); // => I wash with Irish Spring
+
+    ~ This will be displayed in the console.
