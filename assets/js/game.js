@@ -1,5 +1,3 @@
-//FIGHT://
-
 // fight function (now with parameter for enemy's name)
 var fight = function(enemy) {
 
@@ -67,11 +65,23 @@ var randomNumber = function(min,max) {
 
   return value;
 };
+
+var getPlayerName = function() {
+  var name = ""
+  // add loop here w prompt and condition
+  while (name === "" || name === null) {
+    name = prompt("What is your robot's name?")
+  }
+
+  console.log("Your robot's name is" + name);
+  return name;
+};
+
 var playerInfo = {  
-  name: window.prompt("What is your robot's name?"),
+  name: getPlayerName(),
   health: 100,
   attack: 10,
-  money: 10
+  money: 10,
   reset: function() {
     this.health = 100;
     this.money = 10
@@ -203,6 +213,6 @@ var shop = function() {
       shop();
       break;
   }
-}
+};
 
 startGame();
